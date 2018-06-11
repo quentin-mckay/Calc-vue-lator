@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// === variables ===
+$color-black: #222831;
+$color-white: #eeeeee;
+
+$color-blue: lighten(#00adb5, 20%);
+
+$color-operator: #393e46;
+$color-equals: #00ff951f;
+$color-all-clear: rgba(red, .1);
+
+$border-radius: 2px;
+
+// === reset ===
+html { font-size: 62.5%; }
+* { padding: 0; margin: 0; box-sizing: border-box; }
+
+
+body {
+    background-color: $color-black;
+    color: $color-white;
+    font-family: Nunito;
+}
+
+.calculator {
+    max-width: 40rem;
+    margin: 16rem auto 2rem;
+    border: 1px solid rgba($color-white, .8);
+    border-radius: $border-radius;
+    padding: .5rem;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;  // first row (display) adjusts to height of content
+    grid-auto-rows: 8rem;  // implicit rows
+    grid-gap: 2px;
+}
+
+.btn {
+    background-color: transparent;
+    color: $color-white;
+    border: 1px solid rgba($color-white, .4);
+    border-radius: $border-radius;
+    outline: none;
+
+    font: inherit;
+    font-size: 2rem;
+
+    transition: background-color .3s;
+
+    &:hover {
+        border-color: $color-blue;
+    }
+
+    &:active {
+        background-color: $color-blue;
+        color: $color-black;
+
+        transition: all 0s; // transition to color is immediate
+    }
+
+    &--all-clear {
+        grid-column: span 2;
+        background-color: $color-all-clear;
+    }
+
+    &--equals {
+        grid-area: 5 / 4 / 7 / 5;
+        background-color: $color-equals;
+    }
+
+    &--zero {
+        grid-column: span 2;
+    }
+
+    &--operator {
+        background-color: $color-operator;
+    }
+}
+
+
+
+.display {
+    grid-column: 1 / -1;  // span an entire row
+    padding-right: 5px;
+    
+    &__equation {
+        height: 20px;
+        text-align: right;
+        font-size: 1.4rem;
+    }
+    
+    &__current-val {
+        height: 70%;
+        text-align: right;
+        font-size: 5rem;
+    }
+}
+
+.info {
+    max-width: 40rem;
+    margin: 0 auto;
+    padding-left: 1rem;
+    font-size: 1.4rem;
+    line-height: 1.5;
+    letter-spacing: 1px;
+}
+
+kbd {
+    background: $color-operator;
+    padding: 2px 5px 3px;
+    border-radius: $border-radius;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.flash {
+    background-color: $color-blue;
+    transition: background-color .0001s;  // so we still get transitionend event fired
+}
+

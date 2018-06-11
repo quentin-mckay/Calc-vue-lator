@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Calcvuelator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+    <div id="app">
+        <div class="calculator">
+            <div class="display">
+                <div class="display__equation">{{ displayEquation }}</div>
+                <div class="display__current-val">{{ displayCurrent }}</div>
+            </div>
+            <button @click="allClearClick" ref="allClear" class="btn btn--all-clear">AC</button>
+            <button @click="operatorClick" class="btn btn--operator">/</button>
+            <button @click="operatorClick" class="btn btn--operator">x</button>
+            <button @click="numberClick" class="btn">7</button>
+            <button @click="numberClick" class="btn">8</button>
+            <button @click="numberClick" class="btn">9</button>
+            <button @click="operatorClick" class="btn btn--operator">-</button>
+            <button @click="numberClick" class="btn">4</button>
+            <button @click="numberClick" class="btn">5</button>
+            <button @click="numberClick" class="btn">6</button>
+            <button @click="operatorClick" class="btn btn--operator">+</button>
+            <button @click="numberClick" class="btn">1</button>
+            <button @click="numberClick" class="btn">2</button>
+            <button @click="numberClick" class="btn">3</button>
+            <button @click="equalsClick" class="btn btn--equals" ref="equals">=</button>
+            <button @click="numberClick" class="btn btn--zero">0</button>
+            <button @click="decimalClick" class="btn" ref="decimal">.</button>
+        </div>
+
+        <p class="info">
+            <span class="underline">Keyboard controls</span><br>
+            <kbd>0 - 9</kbd> and <kbd>+ - * /</kbd> to input<br>
+            <kbd>Enter</kbd> or <kbd>=</kbd> to execute equation<br>
+            <kbd>c</kbd> to clear
+        </p>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>

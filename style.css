@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css?family=Nunito");
+html {
+  font-size: 62.5%; }
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; }
+
+body {
+  background-color: #222831;
+  color: #eeeeee;
+  font-family: Nunito; }
+
+.calculator {
+  max-width: 40rem;
+  margin: 16rem auto 2rem;
+  border: 1px solid rgba(238, 238, 238, 0.8);
+  border-radius: 2px;
+  padding: .5rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  grid-auto-rows: 8rem;
+  grid-gap: 2px; }
+
+.btn {
+  background-color: transparent;
+  color: #eeeeee;
+  border: 1px solid rgba(238, 238, 238, 0.4);
+  border-radius: 2px;
+  outline: none;
+  font: inherit;
+  font-size: 2rem;
+  transition: background-color .3s; }
+
+.btn:hover {
+  border-color: #1cf5ff; }
+
+.btn:active {
+  background-color: #1cf5ff;
+  color: #222831;
+  transition: all 0s; }
+
+.btn--all-clear {
+  grid-column: span 2;
+  background-color: rgba(255, 0, 0, 0.1); }
+
+.btn--equals {
+  grid-area: 5 / 4 / 7 / 5;
+  background-color: #00ff951f; }
+
+.btn--zero {
+  grid-column: span 2; }
+
+.btn--operator {
+  background-color: #393e46; }
+
+.display {
+  grid-column: 1 / -1;
+  padding-right: 5px; }
+
+.display__equation {
+  height: 20px;
+  text-align: right;
+  font-size: 1.4rem; }
+
+.display__current-val {
+  height: 70%;
+  text-align: right;
+  font-size: 5rem; }
+
+.info {
+  max-width: 40rem;
+  margin: 0 auto;
+  padding-left: 1rem;
+  font-size: 1.4rem;
+  line-height: 1.5;
+  letter-spacing: 1px; }
+
+kbd {
+  background: #393e46;
+  padding: 2px 5px 3px;
+  border-radius: 2px; }
+
+.underline {
+  text-decoration: underline; }
+
+.flash {
+  background-color: #1cf5ff;
+  transition: background-color .0001s; }
