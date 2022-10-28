@@ -1,4 +1,4 @@
-Relatively simple calculator using Vue and SCSS.
+Calculator built with Vue styled using SCSS and BEM.
 
 UI design based on freeCodeCamp's front-end project https://codepen.io/freeCodeCamp/full/wgGVVX
 

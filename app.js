@@ -1,3 +1,5 @@
+console.log('hi')
+
 new Vue({
     el: '#app',
     data: {
